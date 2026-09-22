@@ -31,7 +31,7 @@ import org.scalatestplus.play.guice.GuiceOneAppPerSuite
 import play.api.mvc.AnyContent
 import play.api.test.FakeRequest
 import services.ProcessOdsService._
-import services.completeValidNonTass7DataStream.validNonTass7DataStream
+import services.completeValidNonTassV7DataStream.validNonTassV7DataStream
 import uk.gov.hmrc.mongo.test.MongoSupport
 import uk.gov.hmrc.validator.models.ods.SheetErrors
 import uk.gov.hmrc.validator.models._
@@ -288,7 +288,7 @@ class ProcessOdsServiceSpec
         val sheetErrors = processOdsService
           .validateOdsFile(
             "Non-TASS.ods",
-            validNonTass7DataStream,
+            validNonTassV7DataStream,
             "Non-TASS",
             useV6andV7Scheme = true
           )
